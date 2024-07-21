@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { Document, Page } from 'react-pdf';
+import { Document, Page} from 'react-pdf';
 import { pdfjs } from 'react-pdf';
 import document from '../document.pdf';
+import DownloadButton from './DownloadButton';
+import '../styles/PdfDownload.css';
 
 import 'react-pdf/dist/Page/TextLayer.css';
 
@@ -27,7 +29,7 @@ function PdfDownload() {
 		);
 
     return (
-    <div>
+    <div align='center'>
         <nav>
             <button onClick={goToPrevPage}>Prev</button>
             <button onClick={goToNextPage}>Next</button>
@@ -39,9 +41,15 @@ function PdfDownload() {
         <Document
             file={document}
             onLoadSuccess={onDocumentLoadSuccess}
+            style={{}}
             >
-                <Page pageNumber={pageNumber} />
+                <Page 
+                pageNumber={pageNumber}
+                renderAnnotationLayer={false}
+                renderTextLayer={false}
+                />
             </Document>
+            <DownloadButton/>
     </div>
     );
 }
