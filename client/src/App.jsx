@@ -1,6 +1,17 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+import { ChakraProvider, extendBaseTheme,
+  theme as chakraTheme, } from '@chakra-ui/react'
+
+const { Button } = chakraTheme.components
+
+const theme = extendBaseTheme({
+  components: {
+    Button,
+  },
+})
+
 function App() {
   const [people, setPeople] = useState([]);
 
@@ -18,14 +29,17 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <ChakraProvider theme={theme}>
+      <div className="App">
       <h1>List of People</h1>
       <ul>
         {people.map((person) => (
           <li key={person.id}>{person.name}</li>
         ))}
       </ul>
-    </div>
+~    </div>
+    </ChakraProvider>
+    
   );
 }
 
