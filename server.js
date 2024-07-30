@@ -1,24 +1,27 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 dotenv.config({ path: './config/config.env' });
 
 const app = express();
 
+app.use(cors);
+
 app.get('/', (req, res) => res.send('Server running'));
 
 const people = [
-    { id: 1, name: 'John Doe' },
-    { id: 2, name: 'Jane Smith' },
-    { id: 3, name: 'Michael Brown' },
-    { id: 4, name: 'Emily Johnson' },
-    { id: 5, name: 'David Jones' },
-    { id: 6, name: 'Sarah Davis' },
-    { id: 7, name: 'Kevin Wilson' },
-    { id: 8, name: 'Laura Taylor' },
-    { id: 9, name: 'Richard Williams' },
-    { id: 10, name: 'Emma White' }
-  ];
+  { id: 1, name: 'John Doe' },
+  { id: 2, name: 'Jane Smith' },
+  { id: 3, name: 'Michael Brown' },
+  { id: 4, name: 'Emily Johnson' },
+  { id: 5, name: 'David Jones' },
+  { id: 6, name: 'Sarah Davis' },
+  { id: 7, name: 'Kevin Wilson' },
+  { id: 8, name: 'Laura Taylor' },
+  { id: 9, name: 'Richard Williams' },
+  { id: 10, name: 'Emma White' }
+];
   
   app.get('/api/people', (req, res) => {
     res.json(people);
