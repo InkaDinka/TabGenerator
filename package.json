@@ -1,0 +1,31 @@
+{
+  "name": "guitar-web",
+  "version": "1.0.0",
+  "description": "A website for managing the generation of guitar tabs from audio files.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "node --watch server.js",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InkaDinka/TabGenerator.git"
+  },
+  "author": "Jared Chiaramonte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/InkaDinka/TabGenerator/issues"
+  },
+  "homepage": "https://github.com/InkaDinka/TabGenerator#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "react-pdf": "^9.1.0"
+  }
+}
