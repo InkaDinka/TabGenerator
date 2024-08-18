@@ -1,4 +1,4 @@
-import { Button, VStack} from '@chakra-ui/react'
+import { Button, VStack, HStack} from '@chakra-ui/react'
 import PdfModal from './PdfModal';
 
 function PdfDownload() {
@@ -10,13 +10,15 @@ function PdfDownload() {
     return (
     <>
         <VStack>
-            <PdfModal/>
-            <Button 
-                colorScheme='blue'
-                onClick={downloadFile}
-                >
-                Download
-            </Button>
+            <p>Finished generating tabs, you can now view them and download them below.</p>
+            <HStack>
+                <PdfModal/>
+                <Button 
+                    onClick={downloadFile}
+                    >
+                    Download
+                </Button>
+            </HStack>
         </VStack>
     </>
     );
