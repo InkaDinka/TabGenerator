@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/InkaDinka/TabGenerator.git"
+    "url": "git+https://github.com/jachiaram/GuitarML.git"
   },
   "author": "Jared Chiaramonte",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/InkaDinka/TabGenerator/issues"
+    "url": "https://github.com/jachiaram/GuitarML/issues"
   },
-  "homepage": "https://github.com/InkaDinka/TabGenerator#readme",
+  "homepage": "https://github.com/jachiaram/GuitarML#readme",
   "devDependencies": {
     "concurrently": "^8.2.2"
   },
